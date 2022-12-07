@@ -1,0 +1,21 @@
+[user]
+    name = akijoey
+    email = akijoey@akijoey.com
+
+[init]
+    defaultBranch = main
+
+[core]
+    editor = emacsclient
+    autocrlf = input
+    safecrlf = true
+
+[status]
+    showUntrackedFiles = all
+
+[format]
+    pretty = %C(auto)%h -%d %s %Cgreen(%cr) %C(cyan)<%an>
+
+[alias]
+    co = checkout
+    lg = log --graph
