@@ -8,21 +8,19 @@ help() {
     echo
     echo 'Options:'
     echo '  -p, setup the password of user'
+    echo '  -d, delete the password of user'
     echo '  -h, display this help and exit'
     exit
 }
 
-while getopts 'hp:' OPT; do
+while getopts 'hdp:' OPT; do
     case $OPT in
-        p) PASSWORD=$OPTARG ;;
+        p) echo $(whoami):$OPTARG | chpasswd ;;
+        d) passwd -d $(whoami) ;;
         h) help ;;
         ?) help ;;
     esac
 done
-
-if [ $PASSWORD ]; then
-    echo $(whoami):$PASSWORD | chpasswd
-fi
 
 main() {
     apt update
