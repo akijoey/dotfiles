@@ -27,6 +27,7 @@ main() {
     apt install -y \
         net-tools curl wget git subversion \
         apt-transport-https ca-certificates \
+        software-properties-common \
         zsh tmux vim emacs \
         openssh-server \
         htop mc \

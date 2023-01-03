@@ -63,9 +63,3 @@ zinit light romkatv/powerlevel10k
 
 THEME_CONFIG=$ZSH_CONFIG/p10k.zsh
 [[ -f $THEME_CONFIG ]] && source $THEME_CONFIG
-
-# env
-export \
-    LANG=en_US.utf8 \
-    TERM=xterm-256color \
-    PATH=./node_modules/.bin:$PATH
