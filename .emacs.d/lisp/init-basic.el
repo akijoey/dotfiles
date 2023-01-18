@@ -2,7 +2,12 @@
 
 ;; init-basic.el
 
-(electric-pair-mode t)
-(global-auto-revert-mode t)
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+
+(electric-pair-mode)
+(global-auto-revert-mode)
+(global-display-line-numbers-mode)
+(column-number-mode)
 
 (provide 'init-basic)

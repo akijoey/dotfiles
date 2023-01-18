@@ -63,3 +63,6 @@ zinit light romkatv/powerlevel10k
 
 THEME_CONFIG=$ZSH_CONFIG/p10k.zsh
 [[ -f $THEME_CONFIG ]] && source $THEME_CONFIG
+
+# alias
+alias ec="emacsclient -ta ''"
