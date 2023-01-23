@@ -21,18 +21,20 @@
 (add-emacs-directory "lisp")
 (add-emacs-directory "site-lisp")
 
+;; custom file
 (defun load-custom-file (file)
   "Set file to `custom-file`"
   (setq custom-file
-    (expand-file-name file user-emacs-directory)))
+    (expand-file-name file user-emacs-directory))
+  (load custom-file))
 
 (load-custom-file "custom.el")
-(load custom-file)
 
 ;; packages
 (require 'init-package)
 (require 'init-basic)
 (require 'init-themes)
-(require 'init-docker)
+(require 'init-company)
 (require 'init-yasnippet)
 (require 'init-treemacs)
+(require 'init-docker)
