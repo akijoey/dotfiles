@@ -1,6 +1,7 @@
 ;; -*- lexical-binding: t no-byte-compile: t -*-
 
-;; melpa
+;; init.el
+
 (require 'package)
 (add-to-list 'package-archives
   '("melpa" . "http://melpa.org/packages/"))
@@ -38,3 +39,4 @@
 (require 'init-yasnippet)
 (require 'init-treemacs)
 (require 'init-docker)
+(require 'init-magit)

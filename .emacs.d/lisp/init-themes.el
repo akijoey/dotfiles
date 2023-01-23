@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 ;; init-themes.el
 
 (use-package doom-themes
