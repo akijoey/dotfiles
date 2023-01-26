@@ -1,6 +1,4 @@
-;; -*- lexical-binding: t -*-
-
-;; init-treemacs.el
+;; init-treemacs.el -*- lexical-binding: t -*-
 
 (use-package treemacs
   :bind (([f8] . treemacs)

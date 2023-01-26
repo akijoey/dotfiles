@@ -1,6 +1,4 @@
-;; -*- lexical-binding: t -*-
-
-;; init-themes.el
+;; init-themes.el -*- lexical-binding: t -*-
 
 (use-package doom-themes
   :demand t

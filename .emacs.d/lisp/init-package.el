@@ -1,6 +1,4 @@
-;; -*- lexical-binding: t -*-
-
-;; init-package.el
+;; init-package.el -*- lexical-binding: t -*-
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)

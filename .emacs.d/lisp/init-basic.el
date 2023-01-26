@@ -1,6 +1,4 @@
-;; -*- lexical-binding: t -*-
-
-;; init-basic.el
+;; init-basic.el -*- lexical-binding: t -*-
 
 (tool-bar-mode 0)
 (menu-bar-mode 0)

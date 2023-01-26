@@ -1,6 +1,4 @@
-;; -*- lexical-binding: t no-byte-compile: t -*-
-
-;; init.el
+;; init.el -*- lexical-binding: t no-byte-compile: t -*-
 
 (require 'package)
 (add-to-list 'package-archives

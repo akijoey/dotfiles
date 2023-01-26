@@ -1,3 +1,1 @@
-;; -*- lexical-binding: t -*-
-
-;; custom.el
+;; custom.el -*- lexical-binding: t -*-

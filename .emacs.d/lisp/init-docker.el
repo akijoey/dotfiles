@@ -1,6 +1,4 @@
-;; -*- lexical-binding: t -*-
-
-;; init-docker.el
+;; init-docker.el -*- lexical-binding: t -*-
 
 (use-package docker
   :bind ("C-c d" . docker))

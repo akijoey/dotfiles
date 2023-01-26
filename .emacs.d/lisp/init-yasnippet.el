@@ -1,6 +1,4 @@
-;; -*- lexical-binding: t -*-
-
-;; init-yasnippet.el
+;; init-yasnippet.el -*- lexical-binding: t -*-
 
 (use-package yasnippet
   :diminish yas-minor-mode

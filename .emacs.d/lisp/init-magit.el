@@ -1,6 +1,4 @@
-;; -*- lexical-binding: t -*-
-
-;; init-magit.el
+;; init-magit.el -*- lexical-binding: t -*-
 
 (use-package magit)
 

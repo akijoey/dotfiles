@@ -1,6 +1,4 @@
-;; -*- lexical-binding: t -*-
-
-;; init-company.el
+;; init-company.el -*- lexical-binding: t -*-
 
 (use-package company
   :diminish
