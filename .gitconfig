@@ -10,6 +10,9 @@
     autocrlf = input
     safecrlf = true
 
+[credential]
+    helper = cache
+
 [status]
     showUntrackedFiles = all
 
