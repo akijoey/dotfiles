@@ -9,6 +9,7 @@
     editor = emacs
     autocrlf = input
     safecrlf = true
+    filemode = false
 
 [credential]
     helper = cache
