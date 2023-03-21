@@ -17,9 +17,6 @@
 [status]
     showUntrackedFiles = all
 
-[format]
-    pretty = %C(auto)%h -%d %s %Cgreen(%cr) %C(cyan)<%an>
-
 [alias]
     co = checkout
-    lg = log --graph
+    lg = log --graph --pretty='%C(auto)%h -%d %s %Cgreen(%cr) %C(cyan)<%an>'
