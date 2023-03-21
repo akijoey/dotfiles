@@ -25,7 +25,8 @@
   "Set file to `custom-file`"
   (setq custom-file
     (expand-file-name file user-emacs-directory))
-  (load custom-file))
+  (when (file-exists-p custom-file)
+    (load custom-file)))
 
 (load-custom-file "custom.el")
 
