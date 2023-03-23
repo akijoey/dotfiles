@@ -18,5 +18,6 @@
     showUntrackedFiles = all
 
 [alias]
+    ci = commit
     co = checkout
     lg = log --graph --pretty='%C(auto)%h -%d %s %Cgreen(%cr) %C(cyan)<%an>'
