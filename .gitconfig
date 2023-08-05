@@ -17,6 +17,13 @@
 [status]
     showUntrackedFiles = all
 
+[merge]
+    ff = true
+
+[pull]
+    ff = true
+    rebase = false
+
 [alias]
     ci = commit
     co = checkout
