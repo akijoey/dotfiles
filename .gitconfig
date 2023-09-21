@@ -1,6 +1,7 @@
 [user]
     name = akijoey
     email = akijoey@akijoey.com
+    signingKey = 95FD308D642B6D7C4D3B57FEC742484AA3F9A8B4
 
 [init]
     defaultBranch = main
