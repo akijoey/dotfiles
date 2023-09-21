@@ -64,5 +64,13 @@ zinit light romkatv/powerlevel10k
 THEME_CONFIG=$ZSH_CONFIG/p10k.zsh
 [[ -f $THEME_CONFIG ]] && source $THEME_CONFIG
 
+# gnupg
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
+export GPG_TTY=$TTY
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
 # alias
 alias ec="emacsclient -ta ''"

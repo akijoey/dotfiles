@@ -17,6 +17,9 @@
 [status]
     showUntrackedFiles = all
 
+[commit]
+    gpgSign = true
+
 [merge]
     ff = true
 
