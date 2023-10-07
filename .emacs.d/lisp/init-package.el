@@ -15,7 +15,6 @@
 
 (use-package diminish)
 (use-package bind-key)
-
 (use-package gnu-elpa-keyring-update)
 
 (provide 'init-package)

@@ -1,7 +1,7 @@
 ;; init-yasnippet.el -*- lexical-binding: t -*-
 
 (use-package yasnippet
-  :diminish yas-minor-mode
+  :diminish yasnippet-mode
   :hook (after-init . yas-global-mode))
 
 (use-package yasnippet-snippets)

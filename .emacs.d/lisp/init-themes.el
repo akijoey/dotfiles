@@ -1,5 +1,9 @@
 ;; init-themes.el -*- lexical-binding: t -*-
 
+(menu-bar-mode 0)
+(tool-bar-mode 0)
+(scroll-bar-mode 0)
+
 (use-package doom-themes
   :demand t
   :config
@@ -7,10 +11,9 @@
   (doom-themes-visual-bell-config)
   (doom-themes-org-config))
 
-;; mode line
 (use-package doom-modeline
-  :custom
-  (doom-modeline-icon nil)
   :hook (after-init . doom-modeline-mode))
+  :config
+  (setq doom-modeline-icon nil)
 
 (provide 'init-themes)

@@ -59,6 +59,11 @@ main() {
         ruby-full \
         default-jdk \
         nodejs
+    
+    # lsp
+    npm install -g typescript-language-server typescript
+    npm install -g dockerfile-language-server-nodejs
+    npm install -g bash-language-server
 
     rm -rf $DOTFILES
     echo 'Install successed.'

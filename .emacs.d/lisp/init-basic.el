@@ -1,12 +1,23 @@
 ;; init-basic.el -*- lexical-binding: t -*-
 
-(tool-bar-mode 0)
-(menu-bar-mode 0)
+;; set variables
+(setq make-backup-files nil)
+(setq auto-save-default nil)
 
-;; minor mode
-(electric-pair-mode)
-(global-auto-revert-mode)
-(global-display-line-numbers-mode)
-(column-number-mode)
+;; after init
+(add-hook 'after-init-hook (lambda ()
+  (global-auto-revert-mode)
+  (auto-save-visited-mode)
+  (delete-selection-mode)
+  (column-number-mode)
+  (electric-pair-mode)))
+
+;; prog mode
+(add-hook 'prog-mode-hook (lambda ()
+  (display-line-numbers-mode)))
+
+;; helper
+(use-package which-key
+  :hook (after-init . which-key-mode))
 
 (provide 'init-basic)
