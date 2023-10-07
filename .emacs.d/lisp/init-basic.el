@@ -4,6 +4,12 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
+;; key bindings
+(global-set-key (kbd "C-c <left>")  'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+(global-set-key (kbd "C-c <up>")    'windmove-up)
+(global-set-key (kbd "C-c <down>")  'windmove-down)
+
 ;; after init
 (add-hook 'after-init-hook (lambda ()
   (global-auto-revert-mode)
