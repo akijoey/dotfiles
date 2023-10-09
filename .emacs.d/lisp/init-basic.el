@@ -18,11 +18,14 @@
   (column-number-mode)
   (electric-pair-mode)))
 
-;; prog mode
-(add-hook 'prog-mode-hook (lambda ()
-  (display-line-numbers-mode)))
-
 ;; helper
+(use-package helpful
+  :bind
+  ("C-h f" . 'helpful-callable)
+  ("C-h v" . 'helpful-variable)
+  ("C-h k" . 'helpful-key)
+  ("C-h x" . 'helpful-command))
+
 (use-package which-key
   :hook (after-init . which-key-mode))
 

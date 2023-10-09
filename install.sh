@@ -38,6 +38,9 @@ main() {
         git clone --depth=1 $REPOSITORY/dotfiles $DOTFILES
     fi
     cp -rf $DOTFILES/.[!.]* $HOME
+
+    # init emacs
+    emacs --batch -l $HOME/.emacs.d/init.el
     
     # source zsh
     chsh -s $(which zsh) $(whoami)
