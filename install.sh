@@ -62,11 +62,17 @@ main() {
         ruby-full \
         default-jdk \
         nodejs
+    npm install -g typescript
     
     # lsp
-    npm install -g typescript-language-server typescript
-    npm install -g dockerfile-language-server-nodejs
-    npm install -g bash-language-server
+    npm install -g \
+        typescript-language-server \
+        vscode-langservers-extracted \
+        @volar/vue-language-server \
+        dockerfile-language-server-nodejs \
+        bash-language-server
+    go install golang.org/x/tools/gopls@latest
+    pip install python-lsp-server
 
     rm -rf $DOTFILES
     echo 'Install successed.'

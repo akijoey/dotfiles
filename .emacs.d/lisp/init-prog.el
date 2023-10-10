@@ -26,5 +26,8 @@
 
 (use-package typescript-mode)
 (use-package json-mode)
+(use-package rust-mode)
+(use-package php-mode)
+(use-package go-mode)
 
 (provide 'init-prog)
