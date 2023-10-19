@@ -38,9 +38,6 @@ main() {
         git clone --depth=1 $REPOSITORY/dotfiles $DOTFILES
     fi
     cp -rf $DOTFILES/.[!.]* $HOME
-
-    # init emacs
-    emacs --batch -l $HOME/.emacs.d/init.el
     
     # source zsh
     chsh -s $(which zsh) $(whoami)
@@ -54,17 +51,18 @@ main() {
         -e 's/#ClientAliveCountMax 3/ClientAliveCountMax 86400/' \
         /etc/ssh/sshd_config
 
-    # program
+    # setup program
     curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
     apt install -y \
         gcc g++ gdb cmake \
         python3 python3-pip \
         ruby-full \
         default-jdk \
+        golang \
         nodejs
     npm install -g typescript
     
-    # lsp
+    # install lsp
     npm install -g \
         typescript-language-server \
         vscode-langservers-extracted \
@@ -73,6 +71,9 @@ main() {
         bash-language-server
     go install golang.org/x/tools/gopls@latest
     pip install python-lsp-server
+
+    # init emacs
+    emacs --batch -l $HOME/.emacs.d/init.el
 
     rm -rf $DOTFILES
     echo 'Install successed.'

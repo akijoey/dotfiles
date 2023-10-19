@@ -5,6 +5,15 @@
   '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
+;; resolve path
+(setq user-home-directory
+  (file-name-as-directory (getenv "HOME")))
+
+(defun expand-directory-name (name &optional dir)
+  "Convert directory name to absolute path"
+  (file-name-as-directory
+    (expand-file-name name dir)))
+
 ;; load path
 (defun add-subdirs-to-load-path (dir)
   "Recursive add directories to `load-path`"
@@ -15,7 +24,7 @@
 (defun add-emacs-directory (dir)
   "Add user emacs directory to `load-path`"
   (add-subdirs-to-load-path
-    (expand-file-name dir user-emacs-directory)))
+    (expand-directory-name dir user-emacs-directory)))
 
 (add-emacs-directory "lisp")
 (add-emacs-directory "site-lisp")
