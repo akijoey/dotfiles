@@ -71,6 +71,7 @@ main() {
         bash-language-server
     go install golang.org/x/tools/gopls@latest
     pip install python-lsp-server
+    gem install solargraph
 
     # init emacs
     emacs --batch -l $HOME/.emacs.d/init.el

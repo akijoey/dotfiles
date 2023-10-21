@@ -11,10 +11,11 @@
   (setq org-agenda-directory
     (expand-directory-name "agenda" org-directory))
   (setq org-agenda-files
-    (directory-files-recursive org-agenda-directory "\\.org$")))
+    (directory-files-recursively org-agenda-directory "\\.org$")))
 
 (use-package org-roam
   :after org
+  :demand t
   :config
   (setq org-roam-directory
     (expand-directory-name "roam" org-directory)))

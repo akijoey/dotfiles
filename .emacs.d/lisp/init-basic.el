@@ -12,13 +12,11 @@
   (column-number-mode)
   (electric-pair-mode)))
 
-;; helper
-(use-package helpful
+;; enhance ability
+(use-package move-text
   :bind
-  ("C-h f" . helpful-callable)
-  ("C-h v" . helpful-variable)
-  ("C-h k" . helpful-key)
-  ("C-h x" . helpful-command))
+  ("M-<up>" . move-text-up)
+  ("M-<down>" . move-text-down))
 
 (use-package windmove
   :bind
@@ -30,9 +28,9 @@
 (use-package which-key
   :hook (after-init . which-key-mode))
 
-(use-package move-text
-  :bind
-  ("M-<up>" . move-text-up)
-  ("M-<down>" . move-text-down))
+(use-package undo-tree
+  :hook (after-init . global-undo-tree-mode)
+  :config
+  (setq undo-tree-auto-save-history nil))
 
 (provide 'init-basic)
