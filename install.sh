@@ -28,6 +28,7 @@ main() {
         net-tools curl wget git subversion \
         apt-transport-https ca-certificates \
         software-properties-common \
+        silversearcher-ag jq \
         zsh tmux vim emacs \
         openssh-server \
         htop mc \

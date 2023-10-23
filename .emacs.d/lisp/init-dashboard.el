@@ -6,8 +6,11 @@
   (setq dashboard-banner-logo-title "Good Luck, Have Fun!")
   (setq dashboard-startup-banner
     (expand-file-name "banner.txt" user-emacs-directory))
-  (setq dashboard-items
-    '((recents . 5) (bookmarks . 5) (projects . 5)))
+  (setq dashboard-items '((recents . 5)
+    (projects . 5)
+    (bookmarks . 5)
+    (registers . 5)
+    (agenda . 5)))
   (dashboard-setup-startup-hook))
 
 (provide 'init-dashboard)

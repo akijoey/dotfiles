@@ -13,16 +13,28 @@
   (setq show-paren-when-point-inside-paren t)
   (setq show-paren-delay 0))
 
-(use-package eglot
-  :hook (prog-mode . (lambda ()
+(use-package lsp-mode
+  :hook
+  (prog-mode . (lambda ()
     (unless (derived-mode-p 'emacs-lisp-mode 'lisp-mode 'makefile-mode)
-      (eglot-ensure)))))
+      (lsp-deferred))))
+  (lsp-mode . lsp-enable-which-key-integration))
 
-(use-package flymake
-  :hook (prog-mode . flymake-mode)
-  :bind 
-  ("M-n" . flymake-goto-next-error)
-  ("M-p" . flymake-goto-prev-error))
+(use-package lsp-ui
+  :hook (lsp-mode . lsp-ui-mode))
+
+(use-package lsp-treemacs
+  :after (lsp-mode treemacs)
+  :demand t
+  :config
+  (lsp-treemacs-sync-mode))
+
+(use-package lsp-ivy)
+
+(use-package dap-mode)
+
+(use-package flycheck
+  :hook (prog-mode . flycheck-mode))
 
 (use-package typescript-mode)
 (use-package json-mode)
