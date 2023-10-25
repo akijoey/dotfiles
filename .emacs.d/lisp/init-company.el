@@ -21,8 +21,9 @@
   ;; backends
   (setq company-dabbrev-ignore-case nil)
   (setq company-dabbrev-downcase nil)
-  (setq company-backends '((company-capf :with company-yasnippet)
-    (company-dabbrev-code company-keywords company-files)
-    company-dabbrev)))
+  (setq company-backends
+    '((company-capf :with company-yasnippet)
+      (company-dabbrev-code company-keywords company-files)
+      company-dabbrev)))
 
 (provide 'init-company)

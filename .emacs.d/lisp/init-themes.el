@@ -1,10 +1,5 @@
 ;; init-themes.el -*- lexical-binding: t -*-
 
-(menu-bar-mode 0)
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
-(horizontal-scroll-bar-mode 0)
-
 (use-package doom-themes
   :demand t
   :config
