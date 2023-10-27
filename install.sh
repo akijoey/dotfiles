@@ -57,6 +57,7 @@ main() {
     apt install -y \
         gcc g++ gdb cmake \
         python3 python3-pip \
+        php composer \
         ruby-full \
         default-jdk \
         golang \
@@ -65,13 +66,18 @@ main() {
     
     # install lsp
     npm install -g \
-        typescript-language-server \
         vscode-langservers-extracted \
+        typescript-language-server \
         @volar/vue-language-server \
         dockerfile-language-server-nodejs \
-        bash-language-server
+        vim-language-server \
+        bash-language-server \
+        unified-language-server \
+        yaml-language-server
+    pip install python-lsp-server \
+        cmake-language-server \
+        nginx-language-server
     go install golang.org/x/tools/gopls@latest
-    pip install python-lsp-server
     gem install solargraph
 
     # init emacs
