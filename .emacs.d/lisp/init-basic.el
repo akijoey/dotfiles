@@ -16,7 +16,7 @@
 (use-package ag)
 
 (use-package avy
-  :bind ("C-x C-a" . avy-goto-char-timer))
+  :bind ("C-x j" . avy-goto-char-timer))
 
 (use-package ace-window
   :bind ("C-x o" . ace-window))
@@ -43,5 +43,9 @@
 
 (use-package iedit
   :bind ("C-c i" . iedit-mode))
+
+(use-package recentf
+  :hook (after-init . recentf-mode)
+  :bind ("C-c r" . recentf-open))
 
 (provide 'init-basic)

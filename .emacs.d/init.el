@@ -52,4 +52,5 @@
 (require 'init-docker)
 (require 'init-magit)
 (require 'init-prog)
-(require 'init-text)
+(require 'init-lsp)
+(require 'init-org)
