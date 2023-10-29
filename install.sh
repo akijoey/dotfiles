@@ -23,11 +23,12 @@ while getopts 'hdp:' OPT; do
 done
 
 main() {
-    apt update
-    apt install -y \
-        net-tools curl wget git subversion \
+    apt-get update
+    apt-get install -y \
         apt-transport-https ca-certificates \
         software-properties-common \
+        build-essential net-tools \
+        curl wget git subversion \
         silversearcher-ag jq \
         zsh tmux vim emacs \
         openssh-server \
@@ -54,17 +55,19 @@ main() {
 
     # setup program
     curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
-    apt install -y \
-        gcc g++ gdb cmake \
+    apt-get install -y \
+        llvm lldb clang cmake \
         python3 python3-pip \
+        default-jdk maven \
         php composer \
         ruby-full \
-        default-jdk \
+        rust-all \
         golang \
         nodejs
     npm install -g typescript
     
     # install lsp
+    apt-get install -y clangd
     npm install -g \
         vscode-langservers-extracted \
         typescript-language-server \
@@ -73,7 +76,8 @@ main() {
         vim-language-server \
         bash-language-server \
         unified-language-server \
-        yaml-language-server
+        yaml-language-server \
+        intelephense
     pip install python-lsp-server \
         cmake-language-server \
         nginx-language-server

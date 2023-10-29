@@ -24,6 +24,6 @@
   (setq company-backends
     '((company-capf :with company-yasnippet)
       (company-dabbrev-code company-keywords company-files)
-      company-dabbrev)))
+      (company-dabbrev :with company-yasnippet))))
 
 (provide 'init-company)

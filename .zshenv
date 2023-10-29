@@ -8,7 +8,7 @@ export EDITOR=emacs
 export PATH=./node_modules/.bin:$PATH
 
 # rust
-export PATH=$HOME/.cargo/bin:$PATH
+# export PATH=$HOME/.cargo/bin:$PATH
 
 # golang
 export PATH=$(go env GOPATH)/bin:$PATH
