@@ -27,12 +27,10 @@ main() {
     apt-get install -y \
         apt-transport-https ca-certificates \
         software-properties-common \
-        build-essential net-tools \
-        curl wget git subversion \
-        silversearcher-ag jq \
-        zsh tmux vim emacs \
-        openssh-server \
-        htop mc \
+        build-essential net-tools gnupg \
+        curl wget git subversion zsh tmux vim emacs \
+        silversearcher-ag jq htop mc \
+        openssh-server
 
     # apply dotfiles
     wget -P /etc -N $REPOSITORY/akijoey/raw/main/motd
