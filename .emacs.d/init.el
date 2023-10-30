@@ -14,6 +14,11 @@
   (file-name-as-directory
     (expand-file-name name dir)))
 
+(defun ensure-directory (dir)
+  "Ensure that directory exists, creating it if necessary"
+  (unless (file-exists-p dir)
+    (make-directory dir t)))
+
 ;; load path
 (defun add-subdirs-to-load-path (dir)
   "Recursive add directories to `load-path`"

@@ -4,6 +4,13 @@
   (expand-directory-name "org" user-home-directory))
 (setq org-agenda-directory
   (expand-directory-name "agenda" org-directory))
+(setq org-roam-directory
+  (expand-directory-name "roam" org-directory))
+
+(add-hook 'after-init-hook (lambda ()
+  (ensure-directory org-directory)
+  (ensure-directory org-agenda-directory)
+  (ensure-directory org-roam-directory)))
 
 ;; agenda commands
 (setq org-agenda-custom-commands-default
@@ -55,8 +62,6 @@
   ("C-c n c" . org-roam-capture)
   ("C-c n j" . org-roam-dailies-capture-today)
   :config
-  (setq org-roam-directory
-    (expand-directory-name "roam" org-directory))
   (org-roam-db-autosync-mode))
 
 (provide 'init-org)
