@@ -52,7 +52,6 @@ main() {
         /etc/ssh/sshd_config
 
     # setup program
-    curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
     apt-get install -y \
         llvm lldb clang cmake \
         python3 python3-pip \
