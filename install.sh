@@ -54,14 +54,14 @@ main() {
     # setup program
     apt-get install -y \
         llvm lldb clang cmake \
-        python3 python3-pip \
+        python3-full python3-pip \
         default-jdk maven \
         php composer \
+        nodejs npm \
         ruby-full \
         rust-all \
-        golang \
-        nodejs
-    npm install -g typescript
+        golang
+    npm install -g corepack typescript
     
     # install lsp
     apt-get install -y clangd
