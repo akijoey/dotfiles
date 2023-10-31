@@ -68,16 +68,18 @@ main() {
     npm install -g \
         vscode-langservers-extracted \
         typescript-language-server \
-        @vue/language-server \
-        dockerfile-language-server-nodejs \
-        vim-language-server \
         bash-language-server \
+        vim-language-server \
         unified-language-server \
         yaml-language-server \
-        intelephense
+        graphql-language-service-cli \
+        dockerfile-language-server-nodejs \
+        @nomicfoundation/solidity-language-server \
+        @vue/language-server
     pip install python-lsp-server \
         cmake-language-server \
         nginx-language-server
+    composer global require felixfbecker/language-server
     go install golang.org/x/tools/gopls@latest
     gem install solargraph
 
