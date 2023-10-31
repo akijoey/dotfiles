@@ -68,7 +68,7 @@ main() {
     npm install -g \
         vscode-langservers-extracted \
         typescript-language-server \
-        @volar/vue-language-server \
+        @vue/language-server \
         dockerfile-language-server-nodejs \
         vim-language-server \
         bash-language-server \
