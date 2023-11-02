@@ -25,6 +25,8 @@
 (use-package php-mode)
 (use-package go-mode)
 (use-package protobuf-mode)
+(use-package web-mode
+  :mode ("\\.vue\\'"))
 
 (use-package markdown-mode)
 (use-package yaml-mode)

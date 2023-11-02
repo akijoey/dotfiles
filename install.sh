@@ -52,6 +52,7 @@ main() {
         /etc/ssh/sshd_config
 
     # setup program
+    curl https://sh.rustup.rs -sSf | sh -s -- -y
     apt-get install -y \
         llvm lldb clang cmake \
         python3-full python3-pip \
@@ -75,13 +76,15 @@ main() {
         graphql-language-service-cli \
         dockerfile-language-server-nodejs \
         @nomicfoundation/solidity-language-server \
-        @vue/language-server
+        @vue/language-server \
+        intelephense
     pip install python-lsp-server \
         cmake-language-server \
         nginx-language-server
     composer global require felixfbecker/language-server
     go install golang.org/x/tools/gopls@latest
     gem install solargraph
+    cargo install -f ra_ap_rust-analyzer
 
     # init emacs
     emacs --batch -l $HOME/.emacs.d/init.el

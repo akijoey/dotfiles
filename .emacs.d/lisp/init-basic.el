@@ -1,6 +1,9 @@
 ;; init-basic.el -*- lexical-binding: t -*-
 
 ;; set variables
+(setq-default tab-width 2)
+(setq-default indent-tabs-mode nil)
+
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
