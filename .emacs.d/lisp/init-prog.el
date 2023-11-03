@@ -19,14 +19,30 @@
 (use-package dap-mode
   :hook (prog-mode . dap-auto-configure-mode))
 
-(use-package typescript-mode)
-(use-package json-mode)
-(use-package rust-mode)
-(use-package php-mode)
-(use-package go-mode)
-(use-package protobuf-mode)
 (use-package web-mode
   :mode ("\\.vue\\'"))
+
+(use-package js
+  :config
+  (setq js-indent-level 2))
+(use-package json-mode)
+
+(use-package typescript-mode
+  :config
+  (setq typescript-indent-level 2))
+
+(use-package css-mode
+  :config
+  (setq css-indent-offset 2))
+
+(use-package go-mode
+  :hook
+  ((go-mode go-dot-mod-mode go-dot-work-mode) . (lambda ()
+    (setq indent-tabs-mode nil))))
+
+(use-package rust-mode)
+(use-package php-mode)
+(use-package protobuf-mode)
 
 (use-package markdown-mode)
 (use-package yaml-mode)

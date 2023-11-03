@@ -18,6 +18,7 @@
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
+  (setq lsp-headerline-breadcrumb-enable nil)
   (setq lsp-modeline-code-action-fallback-icon "!")
   (advice-add 'lsp-bash-check-sh-shell
     :override 'lsp-bash-check-zsh-shell))
