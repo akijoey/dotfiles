@@ -18,6 +18,8 @@
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
+  (setq lsp-enable-indentation nil)
+  (setq lsp-enable-on-type-formatting nil)
   (setq lsp-headerline-breadcrumb-enable nil)
   (setq lsp-modeline-code-action-fallback-icon "!")
   (advice-add 'lsp-bash-check-sh-shell

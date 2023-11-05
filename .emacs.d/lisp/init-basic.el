@@ -36,12 +36,19 @@
   ("M-<up>" . move-text-up)
   ("M-<down>" . move-text-down))
 
+(use-package mwim
+  :bind
+  ([remap move-beginning-of-line] . mwim-beginning)
+  ([remap move-end-of-line] . mwim-end))
+
 (use-package which-key
   :hook (after-init . which-key-mode))
 
 (use-package undo-tree
   :hook (after-init . global-undo-tree-mode)
   :config
+  (setq undo-tree-visualizer-timestamps t)
+  (setq undo-tree-visualizer-diff t)
   (setq undo-tree-auto-save-history nil))
 
 (use-package iedit
@@ -50,5 +57,8 @@
 (use-package recentf
   :hook (after-init . recentf-mode)
   :bind ("C-c r" . recentf-open))
+
+(use-package editorconfig
+  :hook (after-init . editorconfig-mode))
 
 (provide 'init-basic)
