@@ -62,7 +62,7 @@ main() {
         ruby-full \
         rust-all \
         golang
-    npm install -g corepack typescript
+    npm install -g corepack typescript solc
     
     # install lsp
     apt-get install -y clangd
