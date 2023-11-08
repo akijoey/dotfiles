@@ -7,6 +7,9 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
+;; key bindings
+(global-set-key (kbd "C-x /") 'comment-line)
+
 ;; after init
 (add-hook 'after-init-hook (lambda ()
   (global-auto-revert-mode)
