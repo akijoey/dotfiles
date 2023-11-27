@@ -26,7 +26,7 @@ main() {
         software-properties-common \
         build-essential net-tools gnupg \
         curl wget git subversion zsh tmux vim emacs \
-        silversearcher-ag jq htop mc \
+        silversearcher-ag fd-find fzf jq htop mc \
         openssh-server
 
     # apply dotfiles
