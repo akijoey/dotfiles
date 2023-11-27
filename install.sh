@@ -1,8 +1,5 @@
 #!/bin/sh
 
-DOTFILES=$HOME/dotfiles
-REPOSITORY=https://github.com/akijoey
-
 help() {
     echo 'Usage: install.sh [OPTION]...'
     echo
@@ -33,15 +30,29 @@ main() {
         openssh-server
 
     # apply dotfiles
-    wget -P /etc -N $REPOSITORY/akijoey/raw/main/motd
+    PROFILE_REPOSITORY=https://github.com/akijoey/akijoey
+    DOTFILES_REPOSITORY=https://github.com/akijoey/dotfiles
+    DOTFILES=$HOME/dotfiles
+
+    wget -P /etc -N $PROFILE_REPOSITORY/raw/main/motd
     if [ ! -d $DOTFILES ]; then
-        git clone --depth=1 $REPOSITORY/dotfiles $DOTFILES
+        git clone --depth=1 $DOTFILES_REPOSITORY $DOTFILES
     fi
+
     cp -rf $DOTFILES/.[!.]* $HOME
+    rm -rf $DOTFILES
     
     # source zsh
     chsh -s $(which zsh) $(whoami)
     [ -f $HOME/.zshrc ] && zsh -i $HOME/.zshrc
+
+    # setup tmux
+    TMUX_REPOSITORY=https://github.com/gpakosz/.tmux
+    TMUX_CONFIG=$HOME/.config/tmux
+    
+    if [ ! -f $TMUX_CONFIG/tmux.conf ]; then
+        svn export $TMUX_REPOSITORY/trunk/.tmux.conf $TMUX_CONFIG/tmux.conf
+    fi
 
     # ssh server
     [ -f /etc/ssh/sshd_config ] && sed -i \
@@ -89,7 +100,6 @@ main() {
     # init emacs
     emacs --batch -l $HOME/.emacs.d/init.el
 
-    rm -rf $DOTFILES
     echo 'Install successed.'
     exit
 }
