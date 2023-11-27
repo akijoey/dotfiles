@@ -9,12 +9,13 @@ TRANSIENT_PROMPT_CACHE=$XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh
 [[ -r $TRANSIENT_PROMPT_CACHE ]] && source $TRANSIENT_PROMPT_CACHE
 
 # install zinit
+ZINIT_REPOSITORY=https://github.com/zdharma-continuum/zinit
 ZINIT_HOME=$XDG_DATA_HOME/zinit/bin
 ZSH_CONFIG=$XDG_CONFIG_HOME/zsh
 
 if [[ ! -f $ZINIT_HOME/zinit.zsh ]]; then
     mkdir -p $ZINIT_HOME
-    git clone --depth=1 https://github.com/zdharma-continuum/zinit $ZINIT_HOME
+    git clone --depth=1 $ZINIT_REPOSITORY $ZINIT_HOME
 fi
 
 source $ZINIT_HOME/zinit.zsh
