@@ -58,12 +58,19 @@ zinit wait lucid light-mode depth"1" for \
     hlissner/zsh-autopair \
     agkozak/zsh-z
 
-# theme
+# fzf
+zinit ice wait lucid depth"1" atload"zicompinit; zicdreplay" blockf
+zinit light Aloxaf/fzf-tab
+
+zinit ice lucid wait
+zinit light joshskidmore/zsh-fzf-history-search
+
+# p10k
 zinit ice depth"1"
 zinit light romkatv/powerlevel10k
 
-THEME_CONFIG=$ZSH_CONFIG/p10k.zsh
-[[ -f $THEME_CONFIG ]] && source $THEME_CONFIG
+P10K_CONFIG=$ZSH_CONFIG/p10k.zsh
+[[ -f $P10K_CONFIG ]] && source $P10K_CONFIG
 
 # gnupg
 unset SSH_AGENT_PID
