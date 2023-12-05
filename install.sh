@@ -26,7 +26,7 @@ main() {
         software-properties-common \
         build-essential net-tools gnupg \
         curl wget git subversion zsh tmux vim emacs \
-        silversearcher-ag fd-find fzf jq htop mc \
+        silversearcher-ag ripgrep fd-find fzf jq htop mc \
         openssh-server
 
     # apply dotfiles
@@ -45,6 +45,12 @@ main() {
     # source zsh
     chsh -s $(which zsh) $(whoami)
     [ -f $HOME/.zshrc ] && zsh -i $HOME/.zshrc
+
+    # link fd
+    if [ ! -f $XDG_BIN_HOME/fd ]; then
+        mkdir -p $XDG_BIN_HOME
+        ln -s $(which fdfind) $XDG_BIN_HOME/fd
+    fi
 
     # setup tmux
     TMUX_REPOSITORY=https://github.com/gpakosz/.tmux

@@ -1,9 +1,5 @@
 # zsh configuration
 
-XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
-XDG_CACHE_HOME=${XDG_CACHE_HOME:-$HOME/.cache}
-XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
-
 # instant prompt
 TRANSIENT_PROMPT_CACHE=$XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh
 [[ -r $TRANSIENT_PROMPT_CACHE ]] && source $TRANSIENT_PROMPT_CACHE
@@ -65,6 +61,9 @@ zinit light Aloxaf/fzf-tab
 zinit ice lucid wait
 zinit light joshskidmore/zsh-fzf-history-search
 
+FZF_CONFIG=$ZSH_CONFIG/fzf.zsh
+[[ -f $FZF_CONFIG ]] && source $FZF_CONFIG
+
 # p10k
 zinit ice depth"1"
 zinit light romkatv/powerlevel10k
@@ -72,13 +71,9 @@ zinit light romkatv/powerlevel10k
 P10K_CONFIG=$ZSH_CONFIG/p10k.zsh
 [[ -f $P10K_CONFIG ]] && source $P10K_CONFIG
 
-# gnupg
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-fi
-export GPG_TTY=$TTY
-gpg-connect-agent updatestartuptty /bye >/dev/null
+# gpg
+GPG_CONFIG=$ZSH_CONFIG/gpg.zsh
+[[ -f $GPG_CONFIG ]] && source $GPG_CONFIG
 
 # alias
 alias ec="emacsclient -ta ''"

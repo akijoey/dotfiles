@@ -54,6 +54,7 @@
 (require 'init-dashboard)
 (require 'init-projectile)
 (require 'init-treemacs)
+(require 'init-dired)
 (require 'init-docker)
 (require 'init-magit)
 (require 'init-prog)
