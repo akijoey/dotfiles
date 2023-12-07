@@ -33,6 +33,7 @@
           '(org-agenda-overriding-header "ALL normal priority tasks:"))))))
 
 (use-package org
+  :ensure nil
   :bind
   ("C-c a" . org-agenda)
   ("C-c c" . org-capture)

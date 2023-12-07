@@ -75,6 +75,7 @@
   (setq wgrep-change-readonly-file t))
 
 (use-package proced
+  :ensure nil
   :init
   (setq proced-auto-update-flag t)
   (setq proced-auto-update-interval 3))
