@@ -13,6 +13,9 @@ export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 export XDG_BIN_HOME=${XDG_BIN_HOME:-$HOME/.local/bin}
 export PATH=$XDG_BIN_HOME:$PATH
 
+# man
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 # node
 export PATH=./node_modules/.bin:$PATH
 

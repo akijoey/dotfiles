@@ -11,9 +11,21 @@
     autocrlf = input
     safecrlf = true
     filemode = false
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    line-numbers = true
+    side-by-side = false
 
 [credential]
     helper = cache
+
+[color]
+    ui = auto
 
 [status]
     showUntrackedFiles = all
@@ -21,12 +33,19 @@
 [commit]
     gpgSign = true
 
+[diff]
+    colorMoved = default
+
 [merge]
     ff = true
+    conflictStyle = diff3
 
 [pull]
     ff = true
     rebase = false
+
+[push]
+    recurseSubmodules = check
 
 [alias]
     ci = commit

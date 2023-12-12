@@ -58,7 +58,7 @@ zinit wait lucid light-mode depth"1" for \
 zinit ice wait lucid depth"1" atload"zicompinit; zicdreplay" blockf
 zinit light Aloxaf/fzf-tab
 
-zinit ice lucid wait
+zinit ice wait lucid depth"1"
 zinit light joshskidmore/zsh-fzf-history-search
 
 FZF_CONFIG=$ZSH_CONFIG/fzf.zsh

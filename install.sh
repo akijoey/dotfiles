@@ -22,11 +22,9 @@ done
 main() {
     apt-get update
     apt-get install -y \
-        apt-transport-https ca-certificates \
-        software-properties-common \
-        build-essential net-tools gnupg \
-        curl wget git subversion zsh tmux vim emacs \
-        silversearcher-ag ripgrep fd-find fzf jq htop mc \
+        apt-transport-https ca-certificates software-properties-common \
+        build-essential net-tools iputils-ping dnsutils gnupg man-db \
+        curl wget rsync git subversion zsh tmux emacs vim \
         openssh-server
 
     # apply dotfiles
@@ -45,12 +43,6 @@ main() {
     # source zsh
     chsh -s $(which zsh) $(whoami)
     [ -f $HOME/.zshrc ] && zsh -i $HOME/.zshrc
-
-    # link fd
-    if [ ! -f $XDG_BIN_HOME/fd ]; then
-        mkdir -p $XDG_BIN_HOME
-        ln -s $(which fdfind) $XDG_BIN_HOME/fd
-    fi
 
     # setup tmux
     TMUX_REPOSITORY=https://github.com/gpakosz/.tmux
@@ -72,7 +64,7 @@ main() {
     curl https://sh.rustup.rs -sSf | sh -s -- -y
     apt-get install -y \
         llvm lldb clang cmake \
-        python3-full python3-pip \
+        python3-full python3-pip pipx \
         default-jdk maven \
         php composer \
         nodejs npm \
@@ -80,9 +72,13 @@ main() {
         rust-all \
         golang
     npm install -g corepack typescript solc
+    pipx ensurepath
     
     # install lsp
     apt-get install -y clangd
+    pipx install python-lsp-server
+    pipx install cmake-language-server
+    pipx install nginx-language-server
     npm install -g \
         vscode-langservers-extracted \
         typescript-language-server \
@@ -95,13 +91,33 @@ main() {
         @nomicfoundation/solidity-language-server \
         @vue/language-server \
         intelephense
-    pip install python-lsp-server \
-        cmake-language-server \
-        nginx-language-server
     composer global require felixfbecker/language-server
     go install golang.org/x/tools/gopls@latest
     gem install solargraph
     cargo install -f ra_ap_rust-analyzer
+
+    # modern unix
+    apt-get install -y \
+        fzf fd-find duf ripgrep silversearcher-ag \
+        jq bat htop mc
+    pipx install httpie
+    npm install -g tldr gtop
+    cargo install git-delta eza procs gping
+
+    # ensure bin home
+    if [ ! -d $XDG_BIN_HOME ]; then
+        mkdir -p $XDG_BIN_HOME
+    fi
+
+    # link fd
+    if [ ! -f $XDG_BIN_HOME/fd ]; then
+        ln -s $(which fdfind) $XDG_BIN_HOME/fd
+    fi
+
+    # link bat
+    if [ ! -f $XDG_BIN_HOME/bat ]; then
+        ln -s $(which batcat) $XDG_BIN_HOME/bat
+    fi
 
     # init emacs
     emacs --batch -l $HOME/.emacs.d/init.el
