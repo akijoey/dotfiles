@@ -2,7 +2,11 @@
 
 export FZF_DEFAULT_COMMAND='fd --follow --type file || find . -follow -type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS='--height 40% --border'
+export FZF_DEFAULT_OPTS='--height 40% --ansi --cycle --layout=reverse --border'
+
+# basic
+zstyle ':fzf-tab:*' fzf-pad 4
+zstyle ':fzf-tab:*' switch-group ',' '.'
 
 # completion
 zstyle ':completion:*:descriptions' format '[%d]'
@@ -10,9 +14,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 zstyle ':completion:complete:*:options' sort false
 zstyle ':completion:*:git-checkout:*' sort false
-
-# group
-zstyle ':fzf-tab:*' switch-group ',' '.'
 
 # preview
 zstyle ':fzf-tab:complete:(cd|ls|eza|bat|cat|emacs|nano|vi|vim):*' \

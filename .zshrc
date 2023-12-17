@@ -77,3 +77,7 @@ GPG_CONFIG=$ZSH_CONFIG/gpg.zsh
 
 # alias
 alias ec="emacsclient -ta ''"
+
+if (( $+commands[eza] )); then
+    alias ls='eza --color=auto --group-directories-first'
+fi

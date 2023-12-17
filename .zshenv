@@ -1,8 +1,9 @@
 # zsh env
 
-export LANG=en_US.utf8
+export LANG=en_US.UTF-8
 export TERM=xterm-256color
 export EDITOR=emacs
+export VISUAL=$EDITOR
 
 # xdg
 export XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}

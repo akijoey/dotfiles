@@ -24,7 +24,7 @@ main() {
     apt-get install -y \
         apt-transport-https ca-certificates software-properties-common \
         build-essential net-tools iputils-ping dnsutils gnupg man-db \
-        curl wget rsync git subversion zsh tmux emacs vim \
+        curl wget rsync tree git subversion zsh tmux emacs vim \
         openssh-server
 
     # apply dotfiles
@@ -99,7 +99,7 @@ main() {
     # modern unix
     apt-get install -y \
         fzf fd-find duf ripgrep silversearcher-ag \
-        jq bat htop mc
+        bat jq htop mc
     pipx install httpie
     npm install -g tldr gtop
     cargo install git-delta eza procs gping
@@ -118,6 +118,9 @@ main() {
     if [ ! -f $XDG_BIN_HOME/bat ]; then
         ln -s $(which batcat) $XDG_BIN_HOME/bat
     fi
+
+    # init tmux
+    tmux source $HOME/.tmux.conf
 
     # init emacs
     emacs --batch -l $HOME/.emacs.d/init.el
