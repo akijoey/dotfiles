@@ -44,14 +44,6 @@ main() {
     chsh -s $(which zsh) $(whoami)
     [ -f $HOME/.zshrc ] && zsh -i $HOME/.zshrc
 
-    # setup tmux
-    TMUX_REPOSITORY=https://github.com/gpakosz/.tmux
-    TMUX_CONFIG=$HOME/.config/tmux
-    
-    if [ ! -f $TMUX_CONFIG/tmux.conf ]; then
-        svn export $TMUX_REPOSITORY/trunk/.tmux.conf $TMUX_CONFIG/tmux.conf
-    fi
-
     # ssh server
     [ -f /etc/ssh/sshd_config ] && sed -i \
         -e 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' \
@@ -120,7 +112,11 @@ main() {
     fi
 
     # init tmux
-    tmux source $HOME/.tmux.conf
+    if [ -f $HOME/.tmux.conf ]; then
+        tmux new-session -d
+        tmux source $HOME/.tmux.conf
+        tmux kill-session
+    fi
 
     # init emacs
     emacs --batch -l $HOME/.emacs.d/init.el
