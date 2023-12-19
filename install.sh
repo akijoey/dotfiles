@@ -91,7 +91,7 @@ main() {
     # modern unix
     apt-get install -y \
         fzf fd-find duf ripgrep silversearcher-ag \
-        bat jq htop mc
+        bat jq htop mc redis-tools
     pipx install httpie
     npm install -g tldr gtop
     cargo install git-delta eza procs gping
