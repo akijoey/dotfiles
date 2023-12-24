@@ -7,10 +7,9 @@
 (setq org-roam-directory
   (expand-directory-name "roam" org-directory))
 
-(add-hook 'after-init-hook (lambda ()
-  (ensure-directory org-directory)
-  (ensure-directory org-agenda-directory)
-  (ensure-directory org-roam-directory)))
+(ensure-directory org-directory)
+(ensure-directory org-agenda-directory)
+(ensure-directory org-roam-directory)
 
 ;; agenda commands
 (setq org-agenda-custom-commands-default
