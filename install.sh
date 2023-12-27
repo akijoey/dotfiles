@@ -42,6 +42,7 @@ main() {
     
     # source zsh
     chsh -s $(which zsh) $(whoami)
+    [ -f $HOME/.zshenv ] && source $HOME/.zshenv
     [ -f $HOME/.zshrc ] && zsh -i $HOME/.zshrc
 
     # ssh server

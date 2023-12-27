@@ -24,4 +24,4 @@ export PATH=./node_modules/.bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
 # golang
-export PATH=$(go env GOPATH)/bin:$PATH
+export PATH=$(go env GOPATH 2>/dev/null || echo $HOME/go)/bin:$PATH
