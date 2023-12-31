@@ -11,6 +11,9 @@
 ;; increase maximum data
 (setq read-process-output-max (* 1024 1024))
 
+;; specify warning level
+(setq warning-minimum-level :error)
+
 ;; minimize user Interface
 (menu-bar-mode 0)
 (tool-bar-mode 0)
