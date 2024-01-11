@@ -18,7 +18,7 @@ export PATH=$XDG_BIN_HOME:$PATH
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # node
-export PATH=./node_modules/.bin:$PATH
+export PATH=$PATH:./node_modules/.bin
 
 # rust
 export PATH=$HOME/.cargo/bin:$PATH
