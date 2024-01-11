@@ -1,5 +1,12 @@
 ;; init-company.el -*- lexical-binding: t -*-
 
+(defun add-company-backends (backends)
+  "Add backends to local `company-backends`"
+  (make-local-variable 'company-backends)
+  (setq company-backends (copy-tree company-backends))
+  (setf (car company-backends)
+    (append backends (car company-backends))))
+
 (use-package company
   :diminish
   :hook (after-init . global-company-mode)
@@ -24,6 +31,17 @@
   (setq company-backends
     '((company-capf :with company-yasnippet)
       (company-dabbrev-code company-keywords company-files)
-      (company-dabbrev :with company-yasnippet))))
+      (company-dabbrev))))
+
+(use-package company-statistics
+  :hook (company-mode . company-statistics-mode))
+
+(use-package company-web
+  (html-mode . (lambda ()
+    (add-company-backends '(company-web-html))))
+  (slim-mode . (lambda ()
+    (add-company-backends '(company-web-slim))))
+  (pug-mode . (lambda ()
+    (add-company-backends '(company-web-jade)))))
 
 (provide 'init-company)
