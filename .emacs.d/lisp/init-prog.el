@@ -19,6 +19,10 @@
 (use-package dap-mode
   :hook (prog-mode . dap-auto-configure-mode))
 
+(when (executable-find "prettier")
+  (use-package prettier
+    :bind ("C-c f" . prettier-prettify)))
+
 (use-package web-mode
   :mode ("\\.vue\\'")
   :config
@@ -29,9 +33,16 @@
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-enable-auto-closing t))
 
+(use-package emmet-mode
+  :hook ((sgml-mode css-mode) . emmet-mode))
+
 (use-package js
   :config
   (setq js-indent-level 2))
+(use-package js2-mode
+  :mode ("\\.js\\'")
+  :config
+  (setq js2-mode-show-strict-warnings nil))
 (use-package json-mode)
 
 (use-package typescript-mode
@@ -41,6 +52,12 @@
 (use-package css-mode
   :config
   (setq css-indent-offset 2))
+(use-package sass-mode)
+
+(use-package haml-mode)
+(use-package slim-mode)
+(use-package pug-mode)
+(use-package coffee-mode)
 
 (use-package go-mode
   :hook

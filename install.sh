@@ -94,7 +94,7 @@ main() {
         fzf fd-find duf ripgrep silversearcher-ag \
         bat jq htop mc redis-tools
     pipx install httpie
-    npm install -g tldr gtop
+    npm install -g tldr gtop prettier @akijoey/prettier-config
     cargo install git-delta eza procs gping
 
     # ensure bin home
