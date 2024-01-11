@@ -8,6 +8,9 @@
 (use-package lsp-mode
   :hook
   (prog-mode . (lambda ()
+    ;; resolve global `tsserver` path
+    (eval-after-load "lsp-volar"
+      '(lsp-dependency 'typescript `(:system ,(executable-find "tsserver"))))
     (unless (derived-mode-p 'emacs-lisp-mode 'lisp-mode 'makefile-mode)
       (lsp-deferred))))
   ((markdown-mode yaml-mode yaml-ts-mode) . lsp-deferred)
