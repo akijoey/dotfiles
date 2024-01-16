@@ -69,6 +69,9 @@
 (use-package editorconfig
   :hook (after-init . editorconfig-mode))
 
+(use-package puni
+  :hook (after-init . puni-global-mode))
+
 (use-package wgrep
   :config
   (setq wgrep-auto-save-buffer t)
