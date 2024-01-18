@@ -37,7 +37,7 @@ main() {
         git clone --depth=1 $DOTFILES_REPOSITORY $DOTFILES
     fi
 
-    cp -rf $DOTFILES/.[!.]* $HOME
+    rsync -a --exclude='.git' $DOTFILES/.[!.]* $HOME
     rm -rf $DOTFILES
     
     # source zsh
