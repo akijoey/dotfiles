@@ -47,6 +47,8 @@
 ;; packages
 (require 'init-package)
 (require 'init-basic)
+(require 'init-edit)
+(require 'init-window)
 (require 'init-themes)
 (require 'init-company)
 (require 'init-counsel)
