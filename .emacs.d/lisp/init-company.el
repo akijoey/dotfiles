@@ -37,6 +37,7 @@
   :hook (company-mode . company-statistics-mode))
 
 (use-package company-web
+  :hook
   (html-mode . (lambda ()
     (add-company-backends '(company-web-html))))
   (slim-mode . (lambda ()
