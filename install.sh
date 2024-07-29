@@ -23,7 +23,7 @@ main() {
     apt-get update
     apt-get install -y \
         apt-transport-https ca-certificates software-properties-common \
-        build-essential net-tools iputils-ping dnsutils gnupg man-db \
+        build-essential net-tools iputils-ping dnsutils telnet gnupg man-db \
         curl wget rsync tree git subversion zsh tmux emacs vim \
         openssh-server
 
