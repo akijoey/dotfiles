@@ -47,10 +47,10 @@ main() {
 
     # ssh server
     [ -f /etc/ssh/sshd_config ] && sed -i \
-        -e 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' \
-        -e 's/#PermitEmptyPasswords no/PermitEmptyPasswords yes/' \
-        -e 's/#ClientAliveInterval 0/ClientAliveInterval 30/' \
-        -e 's/#ClientAliveCountMax 3/ClientAliveCountMax 86400/' \
+        -e 's/^#\?PermitRootLogin.*/PermitRootLogin yes/' \
+        -e 's/^#\?PermitEmptyPasswords.*/PermitEmptyPasswords yes/' \
+        -e 's/^#\?ClientAliveInterval.*/ClientAliveInterval 30/' \
+        -e 's/^#\?ClientAliveCountMax.*/ClientAliveCountMax 86400/' \
         /etc/ssh/sshd_config
 
     # setup program
