@@ -24,7 +24,7 @@ main() {
     apt-get install -y \
         apt-transport-https ca-certificates software-properties-common \
         build-essential iproute2 net-tools iputils-ping dnsutils gnupg man-db \
-        curl wget rsync tree git subversion zsh tmux emacs vim \
+        curl wget jq rsync tree git git-lfs subversion zsh tmux emacs vim \
         telnet openssh-server
 
     # apply dotfiles
@@ -52,6 +52,20 @@ main() {
         -e 's/^#\?ClientAliveInterval.*/ClientAliveInterval 30/' \
         -e 's/^#\?ClientAliveCountMax.*/ClientAliveCountMax 86400/' \
         /etc/ssh/sshd_config
+    
+    # install docker cli
+    DOCKER_DOWNLOAD=https://download.docker.com/linux/debian
+    KEYRINGS=/etc/apt/keyrings
+
+    ARCH=$(dpkg --print-architecture)
+    CODENAME=$(lsb_release -c | awk '{print $2}')
+
+    install -m 0755 -d $KEYRINGS
+    curl -fsSL $DOCKER_DOWNLOAD/gpg -o $KEYRINGS/docker.asc
+    echo "deb [arch=$ARCH signed-by=$KEYRINGS/docker.asc] $DOCKER_DOWNLOAD $CODENAME stable" \
+        > /etc/apt/sources.list.d/docker.list
+    apt-get update
+    apt-get install -y docker-ce-cli
 
     # setup program
     curl https://sh.rustup.rs -sSf | sh -s -- -y
